@@ -677,7 +677,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -687,6 +687,7 @@ namespace XtremeTacToe
 					gameArray1 [0] = 2;
 				}
 
+				grader (thisSector);
 				sector = 1;
 				highlightSector ();
 			} 
@@ -701,7 +702,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -725,7 +726,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -749,7 +750,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -773,7 +774,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -797,7 +798,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -821,7 +822,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -845,7 +846,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -869,7 +870,7 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -895,7 +896,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -919,7 +920,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -943,7 +944,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -967,7 +968,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -991,7 +992,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1015,7 +1016,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1039,7 +1040,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1063,7 +1064,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1087,7 +1088,7 @@ namespace XtremeTacToe
 			int thisSector = 2;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1115,7 +1116,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1139,7 +1140,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1161,7 +1162,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1185,7 +1186,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1209,7 +1210,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1233,7 +1234,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1257,7 +1258,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1281,7 +1282,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1305,7 +1306,7 @@ namespace XtremeTacToe
 			int thisSector = 3;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1333,7 +1334,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1357,7 +1358,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1381,7 +1382,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1404,7 +1405,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1428,7 +1429,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1452,7 +1453,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1476,7 +1477,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1500,7 +1501,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1524,7 +1525,7 @@ namespace XtremeTacToe
 			int thisSector = 4;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1552,7 +1553,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1576,7 +1577,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1600,7 +1601,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1624,7 +1625,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1647,7 +1648,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1671,7 +1672,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1695,7 +1696,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1719,7 +1720,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1743,7 +1744,7 @@ namespace XtremeTacToe
 			int thisSector = 5;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1771,7 +1772,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1795,7 +1796,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1819,7 +1820,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1843,7 +1844,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1867,7 +1868,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1890,7 +1891,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1914,7 +1915,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1938,7 +1939,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1962,7 +1963,7 @@ namespace XtremeTacToe
 			int thisSector = 6;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -1990,7 +1991,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2014,7 +2015,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2038,7 +2039,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2062,7 +2063,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2086,7 +2087,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2110,7 +2111,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2133,7 +2134,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2157,7 +2158,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2181,7 +2182,7 @@ namespace XtremeTacToe
 			int thisSector = 7;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2209,7 +2210,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2233,7 +2234,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2257,7 +2258,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2281,7 +2282,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2305,7 +2306,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2329,7 +2330,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2353,7 +2354,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2377,7 +2378,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2401,7 +2402,7 @@ namespace XtremeTacToe
 			int thisSector = 8;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2429,7 +2430,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2453,7 +2454,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2477,7 +2478,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2501,7 +2502,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2525,7 +2526,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2549,7 +2550,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2573,7 +2574,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2597,7 +2598,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2621,7 +2622,7 @@ namespace XtremeTacToe
 			int thisSector = 9;
 			Button button = (Button)obj;
 
-			if (sector == thisSector || sector == 0) {
+			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
@@ -2683,6 +2684,35 @@ namespace XtremeTacToe
 				return 2;
 			else
 				return 0;
+		}
+
+		//Method used to select which game should be graded and updates wholeGameArray
+		//with the correct value
+		static void grader(int thisSector){
+			if (thisSector == 1)
+				wholeGameArray [0] = gradeGame (gameArray1);
+			else if (thisSector == 2)
+				wholeGameArray [1] = gradeGame (gameArray2);
+			else if (thisSector == 3)
+				wholeGameArray [2] = gradeGame (gameArray3);
+			else if (thisSector == 4)
+				wholeGameArray [3] = gradeGame (gameArray4);
+			else if (thisSector == 5)
+				wholeGameArray [4] = gradeGame (gameArray5);
+			else if (thisSector == 6)
+				wholeGameArray [5] = gradeGame (gameArray6);
+			else if (thisSector == 7)
+				wholeGameArray [6] = gradeGame (gameArray7);
+			else if (thisSector == 8)
+				wholeGameArray [7] = gradeGame (gameArray8);
+			else if (thisSector == 9)
+				wholeGameArray [8] = gradeGame (gameArray9);
+		}
+
+		static void updateGameBoardWithGamesWon(){
+//			Frame thisVbox = (Frame) vbox2;
+//
+//			Label
 		}
 
 		public void Dispose(){
