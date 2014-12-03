@@ -54,8 +54,8 @@ namespace XtremeTacToe
 
 
 
-			tableLayout.Attach(vbox1,   0, 1, 0, 1);
-			tableLayout.Attach(vbox2,   1, 2, 0, 1);
+			tableLayout.Attach(vbox1 ,   0, 1, 0, 1);
+			tableLayout.Attach(vbox2 ,   1, 2, 0, 1);
 			tableLayout.Attach(vbox3,   2, 3, 0, 1);
 
 			tableLayout.Attach(vbox4,   0, 1, 1, 2);
@@ -95,8 +95,6 @@ namespace XtremeTacToe
 				button.Label = "X";
 			else
 				button.Label = "O";
-
-
 		}
 
 		static void AddHBox(VBox box, HBox box2){

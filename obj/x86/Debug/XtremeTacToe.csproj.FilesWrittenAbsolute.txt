@@ -4,3 +4,9 @@
 /Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/bin/Debug/XtremeTacToe.exe
 /Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/obj/x86/Debug/XtremeTacToe.exe
 /Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/obj/x86/Debug/XtremeTacToe.exe.mdb
+/Users/kevinanderson/Google Drive/classes/programming languages/assignments/FinalProject/XtremeTacToe/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/kevinanderson/Google Drive/classes/programming languages/assignments/FinalProject/XtremeTacToe/obj/x86/Debug/XtremeTacToe.gtk-gui.gui.stetic
+/Users/kevinanderson/Google Drive/classes/programming languages/assignments/FinalProject/XtremeTacToe/bin/Debug/XtremeTacToe.exe.mdb
+/Users/kevinanderson/Google Drive/classes/programming languages/assignments/FinalProject/XtremeTacToe/bin/Debug/XtremeTacToe.exe
+/Users/kevinanderson/Google Drive/classes/programming languages/assignments/FinalProject/XtremeTacToe/obj/x86/Debug/XtremeTacToe.exe
+/Users/kevinanderson/Google Drive/classes/programming languages/assignments/FinalProject/XtremeTacToe/obj/x86/Debug/XtremeTacToe.exe.mdb

@@ -1,0 +1,6 @@
+/Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/obj/x86/Debug/XtremeTacToe.gtk-gui.gui.stetic
+/Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/bin/Debug/XtremeTacToe.exe.mdb
+/Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/bin/Debug/XtremeTacToe.exe
+/Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/obj/x86/Debug/XtremeTacToe.exe
+/Users/indycolt25/Documents/CSharpProjects/XtremeTacToe/XtremeTacToe/obj/x86/Debug/XtremeTacToe.exe.mdb
