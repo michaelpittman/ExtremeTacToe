@@ -26,6 +26,9 @@ namespace XtremeTacToe
 		static int[] gameArray9 = new int[9];
 		static int[] wholeGameArray = new int[9];
 
+		//array to show which buttons have been clicked
+		static int[] buttonsClicked = new int[81];
+
 		//Frame's for all of the sectors
 		static Frame vbox1;
 		static Frame vbox2;
@@ -50,12 +53,15 @@ namespace XtremeTacToe
 		//sector has been won and updated flag
 		static int[] sectorFlags = new int[9];
 
+		//global variable for entire window
+		static Window myWin;
+
 		public static void Main ()
 		{
 			Application.Init ();
 
 			//Create the Window
-			Window myWin = new Window("XtremeTacToe");
+			myWin = new Window("XtremeTacToe");
 			myWin.Resize(800,800);
 
 			Gdk.Color col = new Gdk.Color (40,40,40);
@@ -75,6 +81,8 @@ namespace XtremeTacToe
 
 			initializeGameArrayToZero (sectorFlags);
 
+			initializeButtonsClickedToZero (buttonsClicked);
+
 			myTable = (Table) MakeOuterTable ();
 			myTable.RowSpacing = 6;
 			myTable.ColumnSpacing = 6;
@@ -91,6 +99,13 @@ namespace XtremeTacToe
 			int i;
 			for(i=0; i<9; i++){
 				array[i] = 0;
+			}
+		}
+
+		public static void initializeButtonsClickedToZero(int[] array){
+			int i;
+			for (i = 0; i < 81; i++) {
+				array [i] = 0;
 			}
 		}
 
@@ -763,14 +778,15 @@ namespace XtremeTacToe
 		static void button1Callback(object obj, EventArgs args){
 			int thisSector = 1;
 			Button button = (Button)obj;
-
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
-				playerTurnCounter++;
+				//playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [0] = 1;
 					gameArray1 [0] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [0] = 1;
 					gameArray1 [0] = 2;
 				}
 
@@ -786,6 +802,11 @@ namespace XtremeTacToe
 				//do nothing for now. possibly flash button red or something
 			}
 
+			playerTurnCounter++;
+
+//			if(playerTurnCounter%2 != 0)
+//				computerMoveToCorrectSector ();
+
 		}
 
 		static void button2Callback(object obj, EventArgs args){
@@ -796,9 +817,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [1] = 1;
 					gameArray1 [1] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [1] = 1;
 					gameArray1 [1] = 2;
 				}
 
@@ -824,9 +847,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [2] = 1;
 					gameArray1 [2] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [2] = 1;
 					gameArray1 [2] = 2;
 				}
 
@@ -852,9 +877,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [3] = 1;
 					gameArray1 [3] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [3] = 1;
 					gameArray1 [3] = 2;
 				}
 
@@ -880,9 +907,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [4] = 1;
 					gameArray1 [4] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [4] = 1;
 					gameArray1 [4] = 2;
 				}
 
@@ -908,9 +937,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [5] = 1;
 					gameArray1 [5] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [5] = 1;
 					gameArray1 [5] = 2;
 				}
 
@@ -936,9 +967,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [6] = 1;
 					gameArray1 [6] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [6] = 1;
 					gameArray1 [6] = 2;
 				}
 
@@ -964,9 +997,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [7] = 1;
 					gameArray1 [7] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [7] = 1;
 					gameArray1 [7] = 2;
 				}
 
@@ -992,9 +1027,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [8] = 1;
 					gameArray1 [8] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [8] = 1;
 					gameArray1 [8] = 2;
 				}
 
@@ -3153,10 +3190,91 @@ namespace XtremeTacToe
 						sectorArray [i].Add (label);
 						label.Show ();
 						sectorFlags [i] = 1;
+						int won = gradeGame (wholeGameArray);
+						if (won == 1) {
+							Console.WriteLine ("Winner is X!!!!!");
+							showWinner (won);
+						} else if (won == 2) {
+							Console.WriteLine ("Winner is O!!!!");
+							showWinner (won);
+						} else if (won == 0) {
+							//do nothing
+						}
+
 					}
 				}
 			}
 		}
+
+
+
+		static void computerMoveToCorrectSector(){
+			Random rnd = new Random ();
+			int num = rnd.Next (1, 10);
+
+			var enumerable = myTable.AllChildren;
+			IEnumerator sequenceEnum = enumerable.GetEnumerator ();
+
+			int counter = 1;
+			while (sequenceEnum.MoveNext ()) {
+				if (counter == sector || sector == 0) {
+					Frame sectorFrame = (Frame)sequenceEnum.Current;
+					computerMoveToCorrectButton (sectorFrame, num);
+				}
+				counter++;
+			}
+		}
+
+		static void computerMoveToCorrectButton(Frame sectorFrame, int rand){
+
+			VBox sectorVbox = (VBox)sectorFrame.Child;
+
+			var enumerable = sectorVbox.AllChildren;
+			IEnumerator sequenceEnum = enumerable.GetEnumerator ();
+
+			int counter = 1;
+			while (sequenceEnum.MoveNext ()) {
+				HBox curHbox = (HBox) sequenceEnum.Current;
+				var enum2 = curHbox.AllChildren;
+				IEnumerator seqEnum = enum2.GetEnumerator ();
+
+				while(seqEnum.MoveNext()){
+					Frame curButtonFrame = (Frame)seqEnum.Current;
+					Button curButton = (Button) curButtonFrame.Child;
+					if (counter == rand) {
+						if (buttonsClicked[((sector-1)*9)+counter] == 0) {
+							curButton.Click ();
+							return;
+						} else {
+							computerMoveToCorrectSector ();
+							return;
+						}
+					}
+					counter++;
+				}
+			}
+		}
+
+
+		//pass in 1 for X is winner and 2 for O is winner
+		static void showWinner(int whoWon){
+			if (whoWon == 1) {
+				Table table = (Table)myWin.Child;
+				table.Destroy ();
+				Label label = new Label ();
+				label.Markup = "<span size='100000' color='white'>You Are A Winner \n Player X !!!</span>";
+				myWin.Add (label);
+				label.Show ();
+			} else if (whoWon == 2) {
+				Table table = (Table)myWin.Child;
+				table.Destroy ();
+				Label label = new Label ();
+				label.Markup = "<span size='100000' color='white'>You Are A Winner \n Player O !!!</span>";
+				myWin.Add (label);
+				label.Show ();
+			}
+		}
+
 
 		public void Dispose(){
 
