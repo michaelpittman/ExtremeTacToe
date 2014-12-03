@@ -3095,7 +3095,7 @@ namespace XtremeTacToe
 				return 2;
 			else if (gameArray [2] == 1 && gameArray [5] == 1 && gameArray [8] == 1)
 				return 1;
-			else if (gameArray [2] == 1 && gameArray [5] == 1 && gameArray [8] == 1)
+			else if (gameArray [2] == 2 && gameArray [5] == 2 && gameArray [8] == 2)
 				return 2;
 			else
 				return 0;
