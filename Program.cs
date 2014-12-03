@@ -1,10 +1,11 @@
 ﻿using System;
 using Gtk;
+using System.Collections;
 
 namespace XtremeTacToe
 {
 
-	class MainClass
+	class MainClass: IDisposable
 	{
 
 		//Arrays that hold the contents of each game
@@ -20,6 +21,18 @@ namespace XtremeTacToe
 		static int[] gameArray8 = new int[9];
 		static int[] gameArray9 = new int[9];
 		static int[] wholeGameArray = new int[9];
+
+		//Frame's for all of the sectors
+		static Frame vbox1;
+		static Frame vbox2;
+		static Frame vbox3;
+		static Frame vbox4;
+		static Frame vbox5;
+		static Frame vbox6;
+		static Frame vbox7;
+		static Frame vbox8;
+		static Frame vbox9;
+
 
 		// 0 = all sectors open, 1-9 = sector number currently active
 		static int sector = 0;
@@ -83,15 +96,15 @@ namespace XtremeTacToe
 			//tableLayout.RowSpacing = 20;
 			//tableLayout.ColumnSpacing = 20;
 
-			Frame vbox1 = createVBox ();
-			Frame vbox2 = createVBox ();
-			Frame vbox3 = createVBox ();
-			Frame vbox4 = createVBox ();
-			Frame vbox5 = createVBox ();
-			Frame vbox6 = createVBox ();
-			Frame vbox7 = createVBox ();
-			Frame vbox8 = createVBox ();
-			Frame vbox9 = createVBox ();
+			vbox1 = createVBox ();
+			vbox2 = createVBox ();
+			vbox3 = createVBox ();
+			vbox4 = createVBox ();
+			vbox5 = createVBox ();
+			vbox6 = createVBox ();
+			vbox7 = createVBox ();
+			vbox8 = createVBox ();
+			vbox9 = createVBox ();
 
 
 
@@ -121,7 +134,7 @@ namespace XtremeTacToe
 			frame.Add (curButton);
 
 			Gdk.Color col = new Gdk.Color ();
-			Gdk.Color.Parse ("red", ref col);
+			Gdk.Color.Parse ("green", ref col);
 
 			frame.ModifyBg (StateType.Normal, col);
 
@@ -175,6 +188,149 @@ namespace XtremeTacToe
 			return frame;
 		}
 
+		static void highlightIndividualSectorGreen(Frame vbox){
+			Gdk.Color col = new Gdk.Color ();
+			Gdk.Color.Parse ("green", ref col);
+
+			VBox thisVbox = (VBox) vbox.Child;
+			var enumerable = thisVbox.AllChildren;
+			IEnumerator sequenceEnum = enumerable.GetEnumerator ();
+			while (sequenceEnum.MoveNext ()) {
+				HBox thisHbox = (HBox) sequenceEnum.Current;
+				var hEnumerable = thisHbox.AllChildren;
+				IEnumerator seqEnum = hEnumerable.GetEnumerator ();
+					while (seqEnum.MoveNext ()) {
+						Frame buttonFrame = (Frame) seqEnum.Current;
+						buttonFrame.ModifyBg (StateType.Normal, col);
+					}
+
+			}
+
+		}
+
+		static void highlightIndividualSectorRed(Frame vbox){
+			Gdk.Color col = new Gdk.Color ();
+			Gdk.Color.Parse ("red", ref col);
+
+			VBox thisVbox = (VBox) vbox.Child;
+			var enumerable = thisVbox.AllChildren;
+			IEnumerator sequenceEnum = enumerable.GetEnumerator ();
+			while (sequenceEnum.MoveNext ()) {
+				HBox thisHbox = (HBox) sequenceEnum.Current;
+				var hEnumerable = thisHbox.AllChildren;
+				IEnumerator seqEnum = hEnumerable.GetEnumerator ();
+				while (seqEnum.MoveNext ()) {
+					Frame buttonFrame = (Frame) seqEnum.Current;
+					buttonFrame.ModifyBg (StateType.Normal, col);
+				}
+
+			}
+		}
+
+		static void highlightSector(){
+			if (sector == 0) {
+				highlightIndividualSectorGreen (vbox1);
+				highlightIndividualSectorGreen (vbox2);
+				highlightIndividualSectorGreen (vbox3);
+				highlightIndividualSectorGreen (vbox4);
+				highlightIndividualSectorGreen (vbox5);
+				highlightIndividualSectorGreen (vbox6);
+				highlightIndividualSectorGreen (vbox7);
+				highlightIndividualSectorGreen (vbox8);
+				highlightIndividualSectorGreen (vbox9);
+			} else if (sector == 1) {
+				highlightIndividualSectorGreen (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 2) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorGreen (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 3) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorGreen (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 4) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorGreen (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 5) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorGreen (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 6) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorGreen (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 7) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorGreen (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 8) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorGreen (vbox8);
+				highlightIndividualSectorRed (vbox9);
+			} else if (sector == 9) {
+				highlightIndividualSectorRed (vbox1);
+				highlightIndividualSectorRed (vbox2);
+				highlightIndividualSectorRed (vbox3);
+				highlightIndividualSectorRed (vbox4);
+				highlightIndividualSectorRed (vbox5);
+				highlightIndividualSectorRed (vbox6);
+				highlightIndividualSectorRed (vbox7);
+				highlightIndividualSectorRed (vbox8);
+				highlightIndividualSectorGreen (vbox9);
+			}
+
+		}
 
 
 //		static void buttonCallback(object obj, EventArgs args){
@@ -532,6 +688,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -555,6 +712,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -578,6 +736,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -601,6 +760,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -624,6 +784,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -647,6 +808,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -670,6 +832,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -693,6 +856,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -716,6 +880,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -741,6 +906,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -764,6 +930,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -787,6 +954,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -810,6 +978,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -833,6 +1002,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -856,6 +1026,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -879,6 +1050,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -902,6 +1074,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -925,6 +1098,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -952,6 +1126,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -974,6 +1149,7 @@ namespace XtremeTacToe
 					gameArray3 [1] = 2;
 				}
 				sector = 2;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -996,6 +1172,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1019,6 +1196,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1042,6 +1220,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1065,6 +1244,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1088,6 +1268,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1111,6 +1292,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1134,6 +1316,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1161,6 +1344,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1184,6 +1368,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1207,6 +1392,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1229,6 +1415,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1252,6 +1439,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1275,6 +1463,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1298,6 +1487,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1321,6 +1511,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1344,6 +1535,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1371,6 +1563,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1394,6 +1587,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1417,6 +1611,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1440,6 +1635,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1462,6 +1658,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1485,6 +1682,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1508,6 +1706,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1531,6 +1730,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1554,6 +1754,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1581,6 +1782,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1604,6 +1806,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1627,6 +1830,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1650,6 +1854,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1673,6 +1878,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1695,6 +1901,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1718,6 +1925,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1741,6 +1949,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1764,6 +1973,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1791,6 +2001,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1814,6 +2025,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1837,6 +2049,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1860,6 +2073,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1883,6 +2097,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1906,6 +2121,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1928,6 +2144,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1951,6 +2168,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1974,6 +2192,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2001,6 +2220,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2024,6 +2244,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2047,6 +2268,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2070,6 +2292,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2093,6 +2316,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2116,6 +2340,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2139,6 +2364,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2162,6 +2388,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2185,6 +2412,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2212,6 +2440,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 1;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2235,6 +2464,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 2;
+				highlightSector ();
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2258,6 +2488,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 3;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2281,6 +2512,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 4;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2304,6 +2536,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 5;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2327,6 +2560,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 6;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2350,6 +2584,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 7;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2373,6 +2608,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 8;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2396,6 +2632,7 @@ namespace XtremeTacToe
 				}
 
 				sector = 9;
+				highlightSector ();
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2447,6 +2684,11 @@ namespace XtremeTacToe
 			else
 				return 0;
 		}
+
+		public void Dispose(){
+
+		}
+
 
 
 			
