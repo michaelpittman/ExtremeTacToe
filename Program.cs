@@ -1,12 +1,16 @@
 ﻿using System;
 using Gtk;
 using System.Collections;
+using GLib;
 
 namespace XtremeTacToe
 {
 
 	class MainClass: IDisposable
 	{
+
+		//Global variable for myTable
+		static Table myTable;
 
 		//Arrays that hold the contents of each game
 		//For all games the index corresponds to the button in the game and the move 
@@ -43,6 +47,9 @@ namespace XtremeTacToe
 		//counter for button creation to assign 
 		static int buttonCreatedCounter = 1;
 
+		//sector has been won and updated flag
+		static int[] sectorFlags = new int[9];
+
 		public static void Main ()
 		{
 			Application.Init ();
@@ -66,8 +73,9 @@ namespace XtremeTacToe
 			initializeGameArrayToZero (gameArray9);
 			initializeGameArrayToZero (wholeGameArray);
 
+			initializeGameArrayToZero (sectorFlags);
 
-			Table myTable = (Table) MakeOuterTable ();
+			myTable = (Table) MakeOuterTable ();
 			myTable.RowSpacing = 6;
 			myTable.ColumnSpacing = 6;
 
@@ -229,119 +237,198 @@ namespace XtremeTacToe
 
 		static void highlightSector(){
 			if (sector == 0) {
-				highlightIndividualSectorGreen (vbox1);
-				highlightIndividualSectorGreen (vbox2);
-				highlightIndividualSectorGreen (vbox3);
-				highlightIndividualSectorGreen (vbox4);
-				highlightIndividualSectorGreen (vbox5);
-				highlightIndividualSectorGreen (vbox6);
-				highlightIndividualSectorGreen (vbox7);
-				highlightIndividualSectorGreen (vbox8);
-				highlightIndividualSectorGreen (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorGreen (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorGreen (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorGreen (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorGreen (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorGreen (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorGreen (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorGreen (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorGreen (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorGreen (vbox9);
 			} else if (sector == 1) {
-				highlightIndividualSectorGreen (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorGreen (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 2) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorGreen (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorGreen (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 3) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorGreen (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorGreen (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 4) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorGreen (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorGreen (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 5) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorGreen (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorGreen (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 6) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorGreen (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorGreen (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 7) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorGreen (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorGreen (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 8) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorGreen (vbox8);
-				highlightIndividualSectorRed (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorGreen (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorRed (vbox9);
 			} else if (sector == 9) {
-				highlightIndividualSectorRed (vbox1);
-				highlightIndividualSectorRed (vbox2);
-				highlightIndividualSectorRed (vbox3);
-				highlightIndividualSectorRed (vbox4);
-				highlightIndividualSectorRed (vbox5);
-				highlightIndividualSectorRed (vbox6);
-				highlightIndividualSectorRed (vbox7);
-				highlightIndividualSectorRed (vbox8);
-				highlightIndividualSectorGreen (vbox9);
+				if(wholeGameArray[0] == 0)
+					highlightIndividualSectorRed (vbox1);
+				if(wholeGameArray[1] == 0)
+					highlightIndividualSectorRed (vbox2);
+				if(wholeGameArray[2] == 0)
+					highlightIndividualSectorRed (vbox3);
+				if(wholeGameArray[3] == 0)
+					highlightIndividualSectorRed (vbox4);
+				if(wholeGameArray[4] == 0)
+					highlightIndividualSectorRed (vbox5);
+				if(wholeGameArray[5] == 0)
+					highlightIndividualSectorRed (vbox6);
+				if(wholeGameArray[6] == 0)
+					highlightIndividualSectorRed (vbox7);
+				if(wholeGameArray[7] == 0)
+					highlightIndividualSectorRed (vbox8);
+				if(wholeGameArray[8] == 0)
+					highlightIndividualSectorGreen (vbox9);
 			}
 
 		}
-
-
-//		static void buttonCallback(object obj, EventArgs args){
-//			playerTurnCounter++;
-//			Button button = (Button)obj;
-//
-//			if (playerTurnCounter % 2 == 0)
-//				button.Label = "X";
-//			else
-//				button.Label = "O";
-//		}
 
 
 		static void buttonCallbackAssigner(Button button){
@@ -688,13 +775,16 @@ namespace XtremeTacToe
 				}
 
 				grader (thisSector);
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
 			}
-
 
 		}
 
@@ -712,8 +802,12 @@ namespace XtremeTacToe
 					gameArray1 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -736,8 +830,12 @@ namespace XtremeTacToe
 					gameArray1 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -760,8 +858,12 @@ namespace XtremeTacToe
 					gameArray1 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -784,8 +886,12 @@ namespace XtremeTacToe
 					gameArray1 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -808,8 +914,12 @@ namespace XtremeTacToe
 					gameArray1 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -832,8 +942,12 @@ namespace XtremeTacToe
 					gameArray1 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -856,8 +970,12 @@ namespace XtremeTacToe
 					gameArray1 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -880,8 +998,12 @@ namespace XtremeTacToe
 					gameArray1 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -906,8 +1028,12 @@ namespace XtremeTacToe
 					gameArray2 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -930,8 +1056,12 @@ namespace XtremeTacToe
 					gameArray2 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -954,8 +1084,12 @@ namespace XtremeTacToe
 					gameArray2 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -978,8 +1112,12 @@ namespace XtremeTacToe
 					gameArray2 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1002,8 +1140,12 @@ namespace XtremeTacToe
 					gameArray2 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1026,8 +1168,12 @@ namespace XtremeTacToe
 					gameArray2 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1050,8 +1196,12 @@ namespace XtremeTacToe
 					gameArray2 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1074,8 +1224,12 @@ namespace XtremeTacToe
 					gameArray2 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1098,8 +1252,12 @@ namespace XtremeTacToe
 					gameArray2 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1126,8 +1284,12 @@ namespace XtremeTacToe
 					gameArray3 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1149,8 +1311,11 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray3 [1] = 2;
 				}
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1172,8 +1337,12 @@ namespace XtremeTacToe
 					gameArray3 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1196,8 +1365,12 @@ namespace XtremeTacToe
 					gameArray3 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1220,8 +1393,12 @@ namespace XtremeTacToe
 					gameArray3 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1244,8 +1421,12 @@ namespace XtremeTacToe
 					gameArray3 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1268,8 +1449,12 @@ namespace XtremeTacToe
 					gameArray3 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1292,8 +1477,12 @@ namespace XtremeTacToe
 					gameArray3 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1316,8 +1505,12 @@ namespace XtremeTacToe
 					gameArray3 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}  
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1344,8 +1537,12 @@ namespace XtremeTacToe
 					gameArray4 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1368,8 +1565,12 @@ namespace XtremeTacToe
 					gameArray4 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1392,8 +1593,12 @@ namespace XtremeTacToe
 					gameArray4 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1415,8 +1620,13 @@ namespace XtremeTacToe
 					gameArray4 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1439,8 +1649,12 @@ namespace XtremeTacToe
 					gameArray4 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1463,8 +1677,12 @@ namespace XtremeTacToe
 					gameArray4 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1487,8 +1705,12 @@ namespace XtremeTacToe
 					gameArray4 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1511,8 +1733,12 @@ namespace XtremeTacToe
 					gameArray4 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1535,8 +1761,12 @@ namespace XtremeTacToe
 					gameArray4 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1563,8 +1793,12 @@ namespace XtremeTacToe
 					gameArray5 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1587,8 +1821,12 @@ namespace XtremeTacToe
 					gameArray5 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1611,8 +1849,12 @@ namespace XtremeTacToe
 					gameArray5 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1635,8 +1877,12 @@ namespace XtremeTacToe
 					gameArray5 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1658,8 +1904,13 @@ namespace XtremeTacToe
 					gameArray5 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1682,8 +1933,12 @@ namespace XtremeTacToe
 					gameArray5 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1706,8 +1961,12 @@ namespace XtremeTacToe
 					gameArray5 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1730,8 +1989,12 @@ namespace XtremeTacToe
 					gameArray5 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1754,8 +2017,12 @@ namespace XtremeTacToe
 					gameArray5 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1782,8 +2049,12 @@ namespace XtremeTacToe
 					gameArray6 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1806,8 +2077,12 @@ namespace XtremeTacToe
 					gameArray6 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1830,8 +2105,12 @@ namespace XtremeTacToe
 					gameArray6 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1854,8 +2133,12 @@ namespace XtremeTacToe
 					gameArray6 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1878,8 +2161,12 @@ namespace XtremeTacToe
 					gameArray6 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1901,8 +2188,13 @@ namespace XtremeTacToe
 					gameArray6 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1925,8 +2217,12 @@ namespace XtremeTacToe
 					gameArray6 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1949,8 +2245,12 @@ namespace XtremeTacToe
 					gameArray6 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -1973,8 +2273,12 @@ namespace XtremeTacToe
 					gameArray6 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2001,8 +2305,12 @@ namespace XtremeTacToe
 					gameArray7 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2025,8 +2333,12 @@ namespace XtremeTacToe
 					gameArray7 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2049,8 +2361,12 @@ namespace XtremeTacToe
 					gameArray7 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2073,8 +2389,12 @@ namespace XtremeTacToe
 					gameArray7 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2097,8 +2417,12 @@ namespace XtremeTacToe
 					gameArray7 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2121,8 +2445,12 @@ namespace XtremeTacToe
 					gameArray7 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2144,8 +2472,13 @@ namespace XtremeTacToe
 					gameArray7 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2168,8 +2501,12 @@ namespace XtremeTacToe
 					gameArray7 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2192,8 +2529,12 @@ namespace XtremeTacToe
 					gameArray7 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2220,8 +2561,12 @@ namespace XtremeTacToe
 					gameArray8 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2244,8 +2589,12 @@ namespace XtremeTacToe
 					gameArray8 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2268,8 +2617,12 @@ namespace XtremeTacToe
 					gameArray8 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2292,8 +2645,12 @@ namespace XtremeTacToe
 					gameArray8 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2316,8 +2673,12 @@ namespace XtremeTacToe
 					gameArray8 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2340,8 +2701,12 @@ namespace XtremeTacToe
 					gameArray8 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2364,8 +2729,12 @@ namespace XtremeTacToe
 					gameArray8 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2388,8 +2757,13 @@ namespace XtremeTacToe
 					gameArray8 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2412,8 +2786,12 @@ namespace XtremeTacToe
 					gameArray8 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2440,8 +2818,12 @@ namespace XtremeTacToe
 					gameArray9 [0] = 2;
 				}
 
-				sector = 1;
-				highlightSector ();
+				if (wholeGameArray [0] == 0)
+					sector = 1;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2464,8 +2846,12 @@ namespace XtremeTacToe
 					gameArray9 [1] = 2;
 				}
 
-				sector = 2;
-				highlightSector ();
+				if (wholeGameArray [1] == 0)
+					sector = 2;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			}
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2488,8 +2874,12 @@ namespace XtremeTacToe
 					gameArray9 [2] = 2;
 				}
 
-				sector = 3;
-				highlightSector ();
+				if (wholeGameArray [2] == 0)
+					sector = 3;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2512,8 +2902,12 @@ namespace XtremeTacToe
 					gameArray9 [3] = 2;
 				}
 
-				sector = 4;
-				highlightSector ();
+				if (wholeGameArray [3] == 0)
+					sector = 4;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2536,8 +2930,12 @@ namespace XtremeTacToe
 					gameArray9 [4] = 2;
 				}
 
-				sector = 5;
-				highlightSector ();
+				if (wholeGameArray [4] == 0)
+					sector = 5;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2560,8 +2958,12 @@ namespace XtremeTacToe
 					gameArray9 [5] = 2;
 				}
 
-				sector = 6;
-				highlightSector ();
+				if (wholeGameArray [5] == 0)
+					sector = 6;
+				else
+					sector = 0;
+				highlightSector();
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2584,8 +2986,12 @@ namespace XtremeTacToe
 					gameArray9 [6] = 2;
 				}
 
-				sector = 7;
-				highlightSector ();
+				if (wholeGameArray [6] == 0)
+					sector = 7;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2608,8 +3014,12 @@ namespace XtremeTacToe
 					gameArray9 [7] = 2;
 				}
 
-				sector = 8;
-				highlightSector ();
+				if (wholeGameArray [7] == 0)
+					sector = 8;
+				else
+					sector = 0;
+				highlightSector(); 
+				grader(thisSector);
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2632,8 +3042,13 @@ namespace XtremeTacToe
 					gameArray9 [8] = 2;
 				}
 
-				sector = 9;
-				highlightSector ();
+				grader(thisSector);
+				if (wholeGameArray [8] == 0)
+					sector = 9;
+				else
+					sector = 0;
+				highlightSector(); 
+
 			} 
 			else {
 				//do nothing for now. possibly flash button red or something
@@ -2707,12 +3122,40 @@ namespace XtremeTacToe
 				wholeGameArray [7] = gradeGame (gameArray8);
 			else if (thisSector == 9)
 				wholeGameArray [8] = gradeGame (gameArray9);
+
+			updateGameBoardWithGamesWon ();
 		}
 
 		static void updateGameBoardWithGamesWon(){
-//			Frame thisVbox = (Frame) vbox2;
-//
-//			Label
+
+			Frame[] sectorArray = new Frame[9];
+			sectorArray [0] = vbox1;
+			sectorArray [1] = vbox2;
+			sectorArray [2] = vbox3;
+			sectorArray [3] = vbox4;
+			sectorArray [4] = vbox5;
+			sectorArray [5] = vbox6;
+			sectorArray [6] = vbox7;
+			sectorArray [7] = vbox8;
+			sectorArray [8] = vbox9;
+
+			int i;
+			for (i = 0; i < 9; i++) {
+				if (wholeGameArray [i] != 0) {
+					if (sectorFlags [i] == 0) {
+						VBox child = (VBox)sectorArray [i].Child;
+						child.Destroy ();
+						Label label = new Label ();
+						if (wholeGameArray [i] == 1)
+							label.Markup = "<span size='88000' color='white'>X</span>";
+						else
+							label.Markup = "<span size='88000' color='white'>O</span>";
+						sectorArray [i].Add (label);
+						label.Show ();
+						sectorFlags [i] = 1;
+					}
+				}
+			}
 		}
 
 		public void Dispose(){
