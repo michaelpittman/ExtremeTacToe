@@ -109,6 +109,26 @@ namespace XtremeTacToe
 			}
 		}
 
+		//returns 1 if sector is full
+		//returns 0 otherwise
+		static int checkIfSectorIsFull(int sectorToCheck){
+
+			int variable = (sectorToCheck - 1) * 9;
+
+				int flag = 1;
+				int i;
+				for (i = variable; i < variable+9; i++) {
+					if (buttonsClicked [i] == 0)
+						flag = 0;
+				}
+
+				if (flag == 1) {
+					return 1;
+				} else
+					return 0;
+			
+		}
+
 		public static Widget MakeOuterTable()
 		{
 
@@ -779,7 +799,8 @@ namespace XtremeTacToe
 			int thisSector = 1;
 			Button button = (Button)obj;
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
-				//playerTurnCounter++;
+				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [0] = 1;
@@ -791,7 +812,7 @@ namespace XtremeTacToe
 				}
 
 				grader (thisSector);
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -801,8 +822,7 @@ namespace XtremeTacToe
 			else {
 				//do nothing for now. possibly flash button red or something
 			}
-
-			playerTurnCounter++;
+				
 
 //			if(playerTurnCounter%2 != 0)
 //				computerMoveToCorrectSector ();
@@ -815,6 +835,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [1] = 1;
@@ -825,7 +846,7 @@ namespace XtremeTacToe
 					gameArray1 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -845,6 +866,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [2] = 1;
@@ -855,7 +877,7 @@ namespace XtremeTacToe
 					gameArray1 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -875,6 +897,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [3] = 1;
@@ -885,7 +908,7 @@ namespace XtremeTacToe
 					gameArray1 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -905,6 +928,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [4] = 1;
@@ -915,7 +939,7 @@ namespace XtremeTacToe
 					gameArray1 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -935,6 +959,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [5] = 1;
@@ -945,7 +970,7 @@ namespace XtremeTacToe
 					gameArray1 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -965,6 +990,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [6] = 1;
@@ -975,7 +1001,7 @@ namespace XtremeTacToe
 					gameArray1 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -995,6 +1021,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [7] = 1;
@@ -1005,7 +1032,7 @@ namespace XtremeTacToe
 					gameArray1 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -1025,6 +1052,7 @@ namespace XtremeTacToe
 
 			if ((sector == thisSector || sector == 0) && (button.Label != "X") && (button.Label != "O")) {
 				playerTurnCounter++;
+				Console.WriteLine (playerTurnCounter);
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
 					buttonsClicked [8] = 1;
@@ -1035,7 +1063,7 @@ namespace XtremeTacToe
 					gameArray1 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -1065,7 +1093,7 @@ namespace XtremeTacToe
 					gameArray2 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -1094,7 +1122,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -1121,7 +1149,7 @@ namespace XtremeTacToe
 					gameArray2 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -1149,7 +1177,7 @@ namespace XtremeTacToe
 					gameArray2 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -1177,7 +1205,7 @@ namespace XtremeTacToe
 					gameArray2 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -1205,7 +1233,7 @@ namespace XtremeTacToe
 					gameArray2 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -1233,7 +1261,7 @@ namespace XtremeTacToe
 					gameArray2 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -1261,7 +1289,7 @@ namespace XtremeTacToe
 					gameArray2 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -1289,7 +1317,7 @@ namespace XtremeTacToe
 					gameArray2 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -1321,7 +1349,7 @@ namespace XtremeTacToe
 					gameArray3 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -1348,7 +1376,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray3 [1] = 2;
 				}
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -1375,7 +1403,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -1402,7 +1430,7 @@ namespace XtremeTacToe
 					gameArray3 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -1430,7 +1458,7 @@ namespace XtremeTacToe
 					gameArray3 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -1458,7 +1486,7 @@ namespace XtremeTacToe
 					gameArray3 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -1486,7 +1514,7 @@ namespace XtremeTacToe
 					gameArray3 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -1514,7 +1542,7 @@ namespace XtremeTacToe
 					gameArray3 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -1542,7 +1570,7 @@ namespace XtremeTacToe
 					gameArray3 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -1574,7 +1602,7 @@ namespace XtremeTacToe
 					gameArray4 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -1602,7 +1630,7 @@ namespace XtremeTacToe
 					gameArray4 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -1630,7 +1658,7 @@ namespace XtremeTacToe
 					gameArray4 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -1658,7 +1686,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -1686,7 +1714,7 @@ namespace XtremeTacToe
 					gameArray4 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -1714,7 +1742,7 @@ namespace XtremeTacToe
 					gameArray4 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -1742,7 +1770,7 @@ namespace XtremeTacToe
 					gameArray4 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -1770,7 +1798,7 @@ namespace XtremeTacToe
 					gameArray4 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -1798,7 +1826,7 @@ namespace XtremeTacToe
 					gameArray4 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -1830,7 +1858,7 @@ namespace XtremeTacToe
 					gameArray5 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -1858,7 +1886,7 @@ namespace XtremeTacToe
 					gameArray5 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -1886,7 +1914,7 @@ namespace XtremeTacToe
 					gameArray5 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -1914,7 +1942,7 @@ namespace XtremeTacToe
 					gameArray5 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -1942,7 +1970,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -1970,7 +1998,7 @@ namespace XtremeTacToe
 					gameArray5 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -1998,7 +2026,7 @@ namespace XtremeTacToe
 					gameArray5 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -2026,7 +2054,7 @@ namespace XtremeTacToe
 					gameArray5 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -2054,7 +2082,7 @@ namespace XtremeTacToe
 					gameArray5 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -2086,7 +2114,7 @@ namespace XtremeTacToe
 					gameArray6 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -2114,7 +2142,7 @@ namespace XtremeTacToe
 					gameArray6 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -2142,7 +2170,7 @@ namespace XtremeTacToe
 					gameArray6 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -2170,7 +2198,7 @@ namespace XtremeTacToe
 					gameArray6 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -2198,7 +2226,7 @@ namespace XtremeTacToe
 					gameArray6 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -2226,7 +2254,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -2254,7 +2282,7 @@ namespace XtremeTacToe
 					gameArray6 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -2282,7 +2310,7 @@ namespace XtremeTacToe
 					gameArray6 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -2310,7 +2338,7 @@ namespace XtremeTacToe
 					gameArray6 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -2342,7 +2370,7 @@ namespace XtremeTacToe
 					gameArray7 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -2370,7 +2398,7 @@ namespace XtremeTacToe
 					gameArray7 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -2398,7 +2426,7 @@ namespace XtremeTacToe
 					gameArray7 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -2426,7 +2454,7 @@ namespace XtremeTacToe
 					gameArray7 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -2454,7 +2482,7 @@ namespace XtremeTacToe
 					gameArray7 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -2482,7 +2510,7 @@ namespace XtremeTacToe
 					gameArray7 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -2510,7 +2538,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -2538,7 +2566,7 @@ namespace XtremeTacToe
 					gameArray7 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -2566,7 +2594,7 @@ namespace XtremeTacToe
 					gameArray7 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -2598,7 +2626,7 @@ namespace XtremeTacToe
 					gameArray8 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -2626,7 +2654,7 @@ namespace XtremeTacToe
 					gameArray8 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -2654,7 +2682,7 @@ namespace XtremeTacToe
 					gameArray8 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -2682,7 +2710,7 @@ namespace XtremeTacToe
 					gameArray8 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -2710,7 +2738,7 @@ namespace XtremeTacToe
 					gameArray8 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -2738,7 +2766,7 @@ namespace XtremeTacToe
 					gameArray8 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -2766,7 +2794,7 @@ namespace XtremeTacToe
 					gameArray8 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -2795,7 +2823,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -2823,7 +2851,7 @@ namespace XtremeTacToe
 					gameArray8 [8] = 2;
 				}
 
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
@@ -2855,7 +2883,7 @@ namespace XtremeTacToe
 					gameArray9 [0] = 2;
 				}
 
-				if (wholeGameArray [0] == 0)
+				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
 					sector = 0;
@@ -2883,7 +2911,7 @@ namespace XtremeTacToe
 					gameArray9 [1] = 2;
 				}
 
-				if (wholeGameArray [1] == 0)
+				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
 					sector = 0;
@@ -2911,7 +2939,7 @@ namespace XtremeTacToe
 					gameArray9 [2] = 2;
 				}
 
-				if (wholeGameArray [2] == 0)
+				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
 					sector = 0;
@@ -2939,7 +2967,7 @@ namespace XtremeTacToe
 					gameArray9 [3] = 2;
 				}
 
-				if (wholeGameArray [3] == 0)
+				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
 					sector = 0;
@@ -2967,7 +2995,7 @@ namespace XtremeTacToe
 					gameArray9 [4] = 2;
 				}
 
-				if (wholeGameArray [4] == 0)
+				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
 					sector = 0;
@@ -2995,7 +3023,7 @@ namespace XtremeTacToe
 					gameArray9 [5] = 2;
 				}
 
-				if (wholeGameArray [5] == 0)
+				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
 					sector = 0;
@@ -3023,7 +3051,7 @@ namespace XtremeTacToe
 					gameArray9 [6] = 2;
 				}
 
-				if (wholeGameArray [6] == 0)
+				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
 					sector = 0;
@@ -3051,7 +3079,7 @@ namespace XtremeTacToe
 					gameArray9 [7] = 2;
 				}
 
-				if (wholeGameArray [7] == 0)
+				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
 					sector = 0;
@@ -3080,7 +3108,7 @@ namespace XtremeTacToe
 				}
 
 				grader(thisSector);
-				if (wholeGameArray [8] == 0)
+				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
 					sector = 0;
