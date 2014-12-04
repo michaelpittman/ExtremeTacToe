@@ -2247,7 +2247,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray6 [4] = 2;
 				}
-
+				buttonsClicked [49] = 1;
 				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
@@ -2274,7 +2274,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray6 [5] = 2;
 				}
-
+				buttonsClicked [50] = 1;
 				grader(thisSector);
 				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
@@ -2303,7 +2303,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray6 [6] = 2;
 				}
-
+				buttonsClicked [51] = 1;
 				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
@@ -2331,7 +2331,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray6 [7] = 2;
 				}
-
+				buttonsClicked [52] = 1;
 				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
@@ -2359,7 +2359,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray6 [8] = 2;
 				}
-
+				buttonsClicked [53] = 1;
 				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
@@ -2391,7 +2391,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [0] = 2;
 				}
-
+				buttonsClicked [54] = 1;
 				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
@@ -2419,7 +2419,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [1] = 2;
 				}
-
+				buttonsClicked [55] = 1;
 				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
@@ -2447,7 +2447,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [2] = 2;
 				}
-
+				buttonsClicked [56] = 1;
 				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
@@ -2475,7 +2475,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [3] = 2;
 				}
-
+				buttonsClicked [57] = 1;
 				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
@@ -2503,7 +2503,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [4] = 2;
 				}
-
+				buttonsClicked [58] = 1;
 				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
@@ -2531,7 +2531,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [5] = 2;
 				}
-
+				buttonsClicked [59] = 1;
 				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
@@ -2558,7 +2558,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [6] = 2;
 				}
-
+				buttonsClicked [60] = 1;
 				grader(thisSector);
 				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
@@ -2587,7 +2587,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [7] = 2;
 				}
-
+				buttonsClicked [61] = 1;
 				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
@@ -2615,7 +2615,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray7 [8] = 2;
 				}
-
+				buttonsClicked [62] = 1;
 				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
@@ -2647,7 +2647,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [0] = 2;
 				}
-
+				buttonsClicked [63] = 1;
 				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
@@ -2675,7 +2675,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [1] = 2;
 				}
-
+				buttonsClicked [64] = 1;
 				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
@@ -2703,7 +2703,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [2] = 2;
 				}
-
+				buttonsClicked [65] = 1;
 				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
@@ -2731,7 +2731,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [3] = 2;
 				}
-
+				buttonsClicked [66] = 1;
 				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
@@ -2759,7 +2759,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [4] = 2;
 				}
-
+				buttonsClicked [67] = 1;
 				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
@@ -2787,7 +2787,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [5] = 2;
 				}
-
+				buttonsClicked [68] = 1;
 				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
@@ -2815,7 +2815,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [6] = 2;
 				}
-
+				buttonsClicked [69] = 1;
 				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
@@ -2843,7 +2843,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [7] = 2;
 				}
-
+				buttonsClicked [70] = 1;
 				grader(thisSector);
 				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
@@ -2872,7 +2872,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray8 [8] = 2;
 				}
-
+				buttonsClicked [71] = 1;
 				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
 				else
@@ -2904,7 +2904,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [0] = 2;
 				}
-
+				buttonsClicked [72] = 1;
 				if (wholeGameArray [0] == 0 && checkIfSectorIsFull(1) == 0)
 					sector = 1;
 				else
@@ -2932,7 +2932,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [1] = 2;
 				}
-
+				buttonsClicked [73] = 1;
 				if (wholeGameArray [1] == 0 && checkIfSectorIsFull(2) == 0)
 					sector = 2;
 				else
@@ -2960,7 +2960,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [2] = 2;
 				}
-
+				buttonsClicked [74] = 1;
 				if (wholeGameArray [2] == 0 && checkIfSectorIsFull(3) == 0)
 					sector = 3;
 				else
@@ -2988,7 +2988,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [3] = 2;
 				}
-
+				buttonsClicked [75] = 1;
 				if (wholeGameArray [3] == 0 && checkIfSectorIsFull(4) == 0)
 					sector = 4;
 				else
@@ -3016,7 +3016,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [4] = 2;
 				}
-
+				buttonsClicked [76] = 1;
 				if (wholeGameArray [4] == 0 && checkIfSectorIsFull(5) == 0)
 					sector = 5;
 				else
@@ -3044,7 +3044,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [5] = 2;
 				}
-
+				buttonsClicked [77] = 1;
 				if (wholeGameArray [5] == 0 && checkIfSectorIsFull(6) == 0)
 					sector = 6;
 				else
@@ -3072,7 +3072,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [6] = 2;
 				}
-
+				buttonsClicked [78] = 1;
 				if (wholeGameArray [6] == 0 && checkIfSectorIsFull(7) == 0)
 					sector = 7;
 				else
@@ -3100,7 +3100,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [7] = 2;
 				}
-
+				buttonsClicked [79] = 1;
 				if (wholeGameArray [7] == 0 && checkIfSectorIsFull(8) == 0)
 					sector = 8;
 				else
@@ -3128,7 +3128,7 @@ namespace XtremeTacToe
 					button.Label = "O";
 					gameArray9 [8] = 2;
 				}
-
+				buttonsClicked [80] = 1;
 				grader(thisSector);
 				if (wholeGameArray [8] == 0 && checkIfSectorIsFull(9) == 0)
 					sector = 9;
