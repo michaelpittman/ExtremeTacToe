@@ -824,8 +824,7 @@ namespace XtremeTacToe
 			}
 
 
-			//			if(playerTurnCounter%2 != 0)
-			//				computerMoveToCorrectSector ();
+			Point position = Mouse.getPosition (myTable);
 
 		}
 
