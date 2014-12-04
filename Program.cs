@@ -56,6 +56,9 @@ namespace XtremeTacToe
 		//global variable for entire window
 		static Window myWin;
 
+		//flag for AI
+		int clickSuccessful = 0;
+
 		public static void Main ()
 		{
 			Application.Init ();
@@ -3125,68 +3128,76 @@ namespace XtremeTacToe
 		//--------------------------------END OF SECTOR 9---------------------------------------------------------
 
 
-
+		//returns 3 if tie game
 		//returns 1 if X wins the game
 		//returns 2 if O wins the game
 		//returns 0 if there is no winner for the game
-		public static int gradeGame(int[] gameArray){
-			if (gameArray [0] == 1 && gameArray [4] == 1 && gameArray [8] == 1)
+		public static int gradeGame(int[] gameArray, int thisSector){
+			if ((gameArray [0] == 1 || gameArray [0] == 3) && (gameArray [4] == 1 || gameArray [4] == 3) && (gameArray [8] == 1 || gameArray [8] == 3))
 				return 1;
-			else if (gameArray [0] == 2 && gameArray [4] == 2 && gameArray [8] == 2)
+			else if ((gameArray [0] == 2 || gameArray [0] == 3) && (gameArray [4] == 2 || gameArray [4] == 3) && (gameArray [8] == 2 || gameArray [8] == 3))
 				return 2;
-			else if (gameArray [2] == 1 && gameArray [4] == 1 && gameArray [6] == 1)
+			else if ((gameArray [2] == 1 || gameArray [2] == 3) && (gameArray [4] == 1 || gameArray [4] == 3) && (gameArray [6] == 1 || gameArray [6] == 3))
 				return 1;
-			else if (gameArray [2] == 2 && gameArray [4] == 2 && gameArray [6] == 2)
+			else if ((gameArray [2] == 2 || gameArray [2] == 3) && (gameArray [4] == 2 || gameArray [4] == 3) && (gameArray [6] == 2 || gameArray [6] == 3))
 				return 2;
-			else if (gameArray [0] == 1 && gameArray [1] == 1 && gameArray [2] == 1)
+			else if ((gameArray [0] == 1 || gameArray [0] == 3) && (gameArray [1] == 1 || gameArray [1] == 3) && (gameArray [2] == 1 || gameArray [2] == 3))
 				return 1;
-			else if (gameArray [0] == 2 && gameArray [1] == 2 && gameArray [2] == 2)
+			else if ((gameArray [0] == 2 || gameArray [0] == 3) && (gameArray [1] == 2 || gameArray [1] == 3) && (gameArray [2] == 2 || gameArray [2] == 3))
 				return 2;
-			else if (gameArray [3] == 1 && gameArray [4] == 1 && gameArray [5] == 1)
+			else if ((gameArray [3] == 1 || gameArray [3] == 3) && (gameArray [4] == 1 || gameArray [4] == 3) && (gameArray [5] == 1 || gameArray [5] == 3))
 				return 1;
-			else if (gameArray [3] == 2 && gameArray [4] == 2 && gameArray [5] == 2)
+			else if ((gameArray [3] == 2 || gameArray [3] == 3) && (gameArray [4] == 2 || gameArray [4] == 3) && (gameArray [5] == 2 || gameArray [5] == 3))
 				return 2;
-			else if (gameArray [6] == 1 && gameArray [7] == 1 && gameArray [8] == 1)
+			else if ((gameArray [6] == 1 || gameArray [6] == 3) && (gameArray [7] == 1 || gameArray [7] == 3) && (gameArray [8] == 1 || gameArray [8] == 3))
 				return 1;
-			else if (gameArray [6] == 2 && gameArray [7] == 2 && gameArray [8] == 2)
+			else if ((gameArray [6] == 2 || gameArray [6] == 3) && (gameArray [7] == 2 || gameArray [7] == 3) && (gameArray [8] == 2 || gameArray [8] == 3))
 				return 2;
-			else if (gameArray [0] == 1 && gameArray [3] == 1 && gameArray [6] == 1)
+			else if ((gameArray [0] == 1 || gameArray [0] == 3) && (gameArray [3] == 1 || gameArray [3] == 3) && (gameArray [6] == 1 || gameArray [6] == 3))
 				return 1;
-			else if (gameArray [0] == 2 && gameArray [3] == 2 && gameArray [6] == 2)
+			else if ((gameArray [0] == 2 || gameArray [0] == 3) && (gameArray [3] == 2 || gameArray [3] == 3) && (gameArray [6] == 2 || gameArray [6] == 3))
 				return 2;
-			else if (gameArray [1] == 1 && gameArray [4] == 1 && gameArray [7] == 1)
+			else if ((gameArray [1] == 1 || gameArray [1] == 3) && (gameArray [4] == 1 || gameArray [4] == 3) && (gameArray [7] == 1 || gameArray [7] == 3))
 				return 1;
-			else if (gameArray [1] == 2 && gameArray [4] == 2 && gameArray [7] == 2)
+			else if ((gameArray [1] == 2 || gameArray [1] == 3) && (gameArray [4] == 2 || gameArray [4] == 3) && (gameArray [7] == 2 || gameArray [7] == 3))
 				return 2;
-			else if (gameArray [2] == 1 && gameArray [5] == 1 && gameArray [8] == 1)
+			else if ((gameArray [2] == 1 || gameArray [2] == 3) && (gameArray [5] == 1 || gameArray [5] == 3) && (gameArray [8] == 1 || gameArray [8] == 3))
 				return 1;
-			else if (gameArray [2] == 2 && gameArray [5] == 2 && gameArray [8] == 2)
+			else if ((gameArray [2] == 2 || gameArray [2] == 3) && (gameArray [5] == 2 || gameArray [5] == 3) && (gameArray [8] == 2 || gameArray [8] == 3))
 				return 2;
-			else
-				return 0;
+			else {
+				if (thisSector != -1) {
+					if (checkIfSectorIsFull (thisSector) == 1) {
+						return 3;
+					} else
+						return 0;
+				} else
+					return 0;
+			}
+				
 		}
 
 		//Method used to select which game should be graded and updates wholeGameArray
 		//with the correct value
 		static void grader(int thisSector){
 			if (thisSector == 1)
-				wholeGameArray [0] = gradeGame (gameArray1);
+				wholeGameArray [0] = gradeGame (gameArray1, thisSector);
 			else if (thisSector == 2)
-				wholeGameArray [1] = gradeGame (gameArray2);
+				wholeGameArray [1] = gradeGame (gameArray2, thisSector);
 			else if (thisSector == 3)
-				wholeGameArray [2] = gradeGame (gameArray3);
+				wholeGameArray [2] = gradeGame (gameArray3, thisSector);
 			else if (thisSector == 4)
-				wholeGameArray [3] = gradeGame (gameArray4);
+				wholeGameArray [3] = gradeGame (gameArray4, thisSector);
 			else if (thisSector == 5)
-				wholeGameArray [4] = gradeGame (gameArray5);
+				wholeGameArray [4] = gradeGame (gameArray5, thisSector);
 			else if (thisSector == 6)
-				wholeGameArray [5] = gradeGame (gameArray6);
+				wholeGameArray [5] = gradeGame (gameArray6, thisSector);
 			else if (thisSector == 7)
-				wholeGameArray [6] = gradeGame (gameArray7);
+				wholeGameArray [6] = gradeGame (gameArray7, thisSector);
 			else if (thisSector == 8)
-				wholeGameArray [7] = gradeGame (gameArray8);
+				wholeGameArray [7] = gradeGame (gameArray8, thisSector);
 			else if (thisSector == 9)
-				wholeGameArray [8] = gradeGame (gameArray9);
+				wholeGameArray [8] = gradeGame (gameArray9, thisSector);
 
 			updateGameBoardWithGamesWon ();
 		}
@@ -3213,12 +3224,15 @@ namespace XtremeTacToe
 						Label label = new Label ();
 						if (wholeGameArray [i] == 1)
 							label.Markup = "<span size='88000' color='white'>X</span>";
-						else
+						else if(wholeGameArray[i] == 2)
 							label.Markup = "<span size='88000' color='white'>O</span>";
+						else
+							label.Markup = "<span size='88000' color='white'>?</span>";
+
 						sectorArray [i].Add (label);
 						label.Show ();
 						sectorFlags [i] = 1;
-						int won = gradeGame (wholeGameArray);
+						int won = gradeGame (wholeGameArray, -1);
 						if (won == 1) {
 							Console.WriteLine ("Winner is X!!!!!");
 							showWinner (won);
@@ -3271,6 +3285,7 @@ namespace XtremeTacToe
 					Button curButton = (Button) curButtonFrame.Child;
 					if (counter == rand) {
 						if (buttonsClicked[((sector-1)*9)+counter] == 0) {
+							int saveSector = sector;
 							curButton.Click ();
 							return;
 						} else {
@@ -3286,21 +3301,69 @@ namespace XtremeTacToe
 
 		//pass in 1 for X is winner and 2 for O is winner
 		static void showWinner(int whoWon){
-			if (whoWon == 1) {
-				Table table = (Table)myWin.Child;
-				table.Destroy ();
-				Label label = new Label ();
-				label.Markup = "<span size='100000' color='white'>You Are A Winner \n Player X !!!</span>";
-				myWin.Add (label);
-				label.Show ();
-			} else if (whoWon == 2) {
-				Table table = (Table)myWin.Child;
-				table.Destroy ();
-				Label label = new Label ();
-				label.Markup = "<span size='100000' color='white'>You Are A Winner \n Player O !!!</span>";
-				myWin.Add (label);
-				label.Show ();
-			}
+			string player = "?";
+
+			if (whoWon == 1)
+				player = " X ";
+			else
+				player = " O ";
+
+
+			Table table = (Table)myWin.Child;
+			table.Destroy ();
+			Label label = new Label ();
+			label.Markup = "<span size='100000' color='white'>You Are A Winner \n Player" + player + "!!!</span>";
+
+			Label replayLabel = new Label ();
+			replayLabel.Markup = "<span size='70000' color='black'> Click To Replay Game</span>";
+
+			Button replay = new Button (replayLabel);
+			replay.Clicked += replayButtonCallback;
+
+			VBox endGameBox = new VBox ();
+			endGameBox.Add (label);
+			endGameBox.Add (replay);
+
+			myWin.Add (endGameBox);
+			replayLabel.Show ();
+			label.Show ();
+			replay.Show ();
+			endGameBox.Show ();
+			
+		}
+
+		static void replayButtonCallback(object obj, EventArgs args){
+			VBox vbox = (VBox)myWin.Child;
+			vbox.Destroy ();
+
+			initializeGameArrayToZero (gameArray1);
+			initializeGameArrayToZero (gameArray2);
+			initializeGameArrayToZero (gameArray3);
+			initializeGameArrayToZero (gameArray4);
+			initializeGameArrayToZero (gameArray5);
+			initializeGameArrayToZero (gameArray6);
+			initializeGameArrayToZero (gameArray7);
+			initializeGameArrayToZero (gameArray8);
+			initializeGameArrayToZero (gameArray9);
+			initializeGameArrayToZero (wholeGameArray);
+
+			initializeGameArrayToZero (sectorFlags);
+
+			initializeButtonsClickedToZero (buttonsClicked);
+
+			sector = 0;
+			playerTurnCounter = 0;
+			buttonCreatedCounter = 1;
+
+			myTable = (Table) MakeOuterTable ();
+			myTable.RowSpacing = 6;
+			myTable.ColumnSpacing = 6;
+
+			myWin.Add (myTable);
+
+
+			//Show Everything
+			myWin.ShowAll();
 		}
 
 
