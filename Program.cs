@@ -27,7 +27,8 @@ namespace XtremeTacToe
 		static int[] wholeGameArray = new int[9];
 
 		//array to show which buttons have been clicked
-		static int[] buttonsClicked = new int[81];
+
+	static int[] buttonsClicked = new int[81];
 
 		//Frame's for all of the sectors
 		static Frame vbox1;
@@ -1090,9 +1091,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [9] = 1;
 					gameArray2 [0] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [9] = 1;
 					gameArray2 [0] = 2;
 				}
 
@@ -1118,9 +1121,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [10] = 1;
 					gameArray2 [1] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [10] = 1;
 					gameArray2 [1] = 2;
 				}
 
@@ -1146,9 +1151,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [11] = 1;
 					gameArray2 [2] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [11] = 1;
 					gameArray2 [2] = 2;
 				}
 
@@ -1174,9 +1181,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [12] = 1;
 					gameArray2 [3] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [12] = 1;
 					gameArray2 [3] = 2;
 				}
 
@@ -1202,9 +1211,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [13] = 1;
 					gameArray2 [4] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [13] = 1;
 					gameArray2 [4] = 2;
 				}
 
@@ -1230,9 +1241,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [14] = 1;
 					gameArray2 [5] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [14] = 1;
 					gameArray2 [5] = 2;
 				}
 
@@ -1258,9 +1271,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [15] = 1;
 					gameArray2 [6] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [15] = 1;
 					gameArray2 [6] = 2;
 				}
 
@@ -1286,9 +1301,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [16] = 1;
 					gameArray2 [7] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [16] = 1;
 					gameArray2 [7] = 2;
 				}
 
@@ -1314,9 +1331,11 @@ namespace XtremeTacToe
 				playerTurnCounter++;
 				if (playerTurnCounter % 2 == 0) {
 					button.Label = "X";
+					buttonsClicked [17] = 1;
 					gameArray2 [8] = 1;
 				} else {
 					button.Label = "O";
+					buttonsClicked [17] = 1;
 					gameArray2 [8] = 2;
 				}
 

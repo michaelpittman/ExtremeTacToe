@@ -66,6 +66,5 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="xicon.jpg" />
-    <None Include="blackTransparentRectangle.png" />
   </ItemGroup>
 </Project>
